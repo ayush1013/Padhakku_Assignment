@@ -3,7 +3,7 @@ const PostsModel = require("../Models/PostsModel");
 const UserModel = require("../Models/UsersModel");
 const PostRoute = express.Router();
 
-PostRoute.get("/api/posts/:userId", async (req, res) => {
+PostRoute.get("/posts/:userId", async (req, res) => {
   const userId = req.params.userId;
   const post = await PostsModel.find({ userId });
   console.log("post", post);
@@ -18,29 +18,20 @@ PostRoute.get("/api/posts/:userId", async (req, res) => {
   }
 });
 
-PostRoute.post("/api/post", async (req, res) => {
+PostRoute.post("/post", async (req, res) => {
   const { userId, content } = req.body;
-  const _id = userId;
   console.log("userId", userId, "content", content);
 
-//   const user = await UserModel.findById({_id});
-
-//   console.log("user", user.length===0, user);
-
   try {
-    // if (user.length === 0) {
-    //   res.status(403).send("User not found");
-    // } else {
       const post = new PostsModel({ userId, content });
       await post.save();
       res.status(200).send("Post saved successfully");
-    // }
   } catch (err) {
     res.status(500).send(err.message);
   }
 });
 
-PostRoute.delete("/api/deletepost/:postId", async (req, res) => {
+PostRoute.delete("/deletepost/:postId", async (req, res) => {
   const postId = req.params.postId;
   const post = await PostsModel.find({ _id: postId });
   const userId_in_post = post[0].userId;

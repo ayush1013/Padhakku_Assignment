@@ -2,7 +2,7 @@ const express = require("express");
 const SignupRoute = express.Router();
 const UserModel = require("../Models/UsersModel");
 
-SignupRoute.post("/api/signup", async (req, res) => {
+SignupRoute.post("/signup", async (req, res) => {
   const { email, name } = req.body;
   console.log("email", email, "name", name)
   const userData = await UserModel.find({ email });

@@ -9,9 +9,9 @@ const PostRoute = require("./Routes/PostRoute");
 app.use(cors());
 app.use(express.json());
 
-app.use("/user", SignupRoute)
+app.use("/api", SignupRoute)
 
-app.use("/", PostRoute)
+app.use("/api", PostRoute)
 
 app.get("/", async (req, res) => {
     res.send("Welcom to Home Page")
