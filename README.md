@@ -37,7 +37,7 @@ This API provides endpoints for user sign-up, creating posts, deleting posts, an
 - **Request Params:**
   - `postId` (string): The ID of the post to be deleted.
 - **Request Body:**
-  -`userId` (string): The ID of the user
+  - `userId` (string): The ID of the user.
 - **Response:**
   - `200 OK`: Successful post deletion.
 
