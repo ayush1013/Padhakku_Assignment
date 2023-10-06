@@ -6,7 +6,7 @@ This API provides endpoints for user sign-up, creating posts, deleting posts, an
 
 ## API Link
 
-[API Link](https://navy-blue-skunk-wig.cyclic.app)
+[https://navy-blue-skunk-wig.cyclic.app](https://navy-blue-skunk-wig.cyclic.app)
 
 ## Endpoints
 
